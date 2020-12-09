@@ -15,6 +15,6 @@ The program and the parts combined would allow the present to perform the follow
 
 # Guide - Physical
 This part of the guide focuses on the physical wiring and designing of the breadboard & raspberry pi.
-1 - Gather Materials, as listed above.
-2 - connect the t-cobbler to both the breadboard and the raspberry pi, as seen in the picture.
-3 - 
+- Gather Materials, as listed above.
+- connect the t-cobbler to both the breadboard and the raspberry pi, as seen in the picture.
+- 
