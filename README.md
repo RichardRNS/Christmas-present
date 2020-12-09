@@ -12,3 +12,9 @@ The program and the parts combined would allow the present to perform the follow
 - All test questions are at a randomized order, with LED light feedback, and clear word instructions.
 
 **Please Note: All steps needs to be followed exactly, care needs to be taken when following those steps as electricity is involved.**
+
+# Guide - Physical
+This part of the guide focuses on the physical wiring and designing of the breadboard & raspberry pi.
+1 - Gather Materials, as listed above.
+2 - connect the t-cobbler to both the breadboard and the raspberry pi, as seen in the picture.
+3 - 
