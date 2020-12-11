@@ -1,1 +1,143 @@
 # This is the program of the present. Please copy and paste the exact program into the PuTTY/command prompt window.
+import RPi.GPIO as gpio
+import time
+import random
+gpio.setmode(gpio.BCM)
+gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_DOWN)
+gpio.setup(18, gpio.OUT)
+gpio.setup(23, gpio.OUT)
+def ContinueOrNot():
+        Again = 0
+        tryAgain = input("Would you like to try again? [Y]es/[N]o")
+        if tryAgain == "Y" or tryAgain == "y":
+                Again = 1
+        elif tryAgain == "N" or tryAgain == "n":
+                Again = 0
+        return Again
+while True:
+                print("Starting...")
+                time.sleep(3)
+                print("Started. Good day, what do you want to play?")
+                choice1 = str(input("[C]olor/[Q]uiz/[N]othing"))
+                if choice1 == "C" or choice1 == "c":
+                        print("press the button to start, or type 'Exit' to exit.")
+                        while True:
+                                time.sleep(3)
+                                if gpio.input(22) == gpio.HIGH:
+                                        if random.randint(1, 2) == 1:
+                                                gpio.output(18, gpio.HIGH)
+                                                answerColor = str(input("What color is this?"))
+                                                if answerColor == "Green" or answerColor == "green":
+                                                        print("You are correct!")
+                                                else:
+                                                        print("You are wrong...")
+                                                gpio.output(18, gpio.LOW)
+                                        else:
+                                                gpio.output(23, gpio.HIGH)
+                                                answerColor = str(input("What color is this?"))
+                                                if answerColor == "Red" or answerColor == "red":
+                                                        print("You are correct!")
+                                                else:
+                                                        print("You are correct!")
+                                                else:
+                                                        print("You are wrong...")
+                                                gpio.output(23, gpio.LOW)
+                                Again = ContinueOrNot()
+                                if Again == 0:
+                                        print("Shutting down...")
+                                        break
+                elif choice1 == "Q" or choice1 == "q":
+                        while True:
+                                print("Press the button to start")
+                                if gpio.input(22) == gpio.HIGH:
+                                        quizChoice = str(input("What type of quiz do you want to take?[M]ath/[E]nglish"))
+                                        if quizChoice == "M" or quizChoice == "m":
+                                                quizValue1 = random.randint(1, 10)
+                                                quizValue2 = random.randint(1, 10)
+                                                print("What is ", quizValue1,"*", quizValue2,"?")
+                                                answerMath = int(input())
+                                                realAnswer = quizValue1 * quizValue2
+                                                if answerMath == realAnswer:
+                                                        print("You are right!")
+                                                        gpio.output(18, gpio.HIGH)
+                                                        time.sleep(3)
+                                                        gpio.output(18, gpio.LOW)
+                                                else:
+                                                        print("You are wrong...")
+                                                        gpio.output(23, gpio.HIGH)
+                                                        time.sleep(3)
+                                                        gpio.output(23, gpio.LOW)
+                                        elif quizChoice == "E" or quizChoice == "e":
+                                                for i in range (5):
+                                                        quizValue = random.randint(1, 5)
+                                                        if quizValue == 1:
+                                                                answerEnglish = str(input("Spell the noun that means a human who is younger than 5"))
+                                                                if answerEnglish == "child" or answerEnglish == "Child":
+                                                                        print("You are right!")
+                                                                        gpio.output(18, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(18, gpio.LOW)
+                                                                        time.sleep(3)
+                                                                        gpio.output(18, gpio.LOW)
+                                                                else:
+                                                                        print("You are wrong...")
+                                                                        gpio.output(23, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(23, gpio.LOW)
+                                                        elif quizValue == 2:
+                                                                answerEnglish = str(input("He ___(be) a man"))
+                                                                if answerEnglish == "is" or answerEnglish == "Is":
+                                                                        print("You are right!")
+                                                                        gpio.output(18, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(18, gpio.LOW)
+                                                                else:
+                                                                        print("You are wrong...")
+                                                                        gpio.output(23, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(23, gpio.LOW)
+                                                        elif quizValue == 3:
+                                                                answerEnglish = str(input("____(be) that apple yours?"))
+                                                                if answerEnglish == "is" or answerEnglish == "Is":
+                                                                        print("You are right!")
+                                                                        gpio.output(18, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(18, gpio.LOW)
+                                                                else:
+                                                                        print("You are wrong...")
+                                                                        gpio.output(23, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(23, gpio.LOW)
+                                                        elif quizValue == 4:
+                                                                answerEnglish = str(input("Do ___  do something that might make you uncomfortable to other people."))
+                                                                if answerEnglish == "not" or answerEnglish == "Not":
+                                                                        print("You are right!")
+                                                                        gpio.output(18, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(18, gpio.LOW)
+                                                                else:
+                                                                        gpio.output(18, gpio.LOW)
+                                                                else:
+                                                                        print("You are wrong...")
+                                                                        gpio.output(23, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(23, gpio.LOW)
+                                                        elif quizValue == 5:
+                                                                answerEnglish = str(input("Yesterday, John ____ (say)"))
+                                                                if answerEnglish == "said" or answerEnglish == "Said":
+                                                                        print("You are right!")
+                                                                        gpio.output(18, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(18, gpio.LOW)
+                                                                else:
+                                                                        print("You are wrong...")
+                                                                        gpio.output(23, gpio.HIGH)
+                                                                        time.sleep(3)
+                                                                        gpio.output(23, gpio.LOW)
+                                        Again = ContinueOrNot()
+                                        if Again == 0:
+                                                print("Shutting Down...")
+                                                break
+                elif choice1 == "N" or choice1 == "n":
+                        print("Shutting down...")
+                        break
