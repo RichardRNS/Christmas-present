@@ -1,0 +1,20 @@
+import RPi.GPIO as gpio
+import time
+gpio.setmode(gpio.BCM)
+gpio.setup(22, gpio.IN, pull_up_down=gpio.PUD_DOWN)
+gpio.setup(18, gpio.OUT)
+gpio.setup(23, gpio.OUT)
+while True:
+  if gpio.input(22) == gpio.HIGH:
+    print("Button was pressed.")
+    gpio.output(18, gpio.HIGH)
+    time.sleep(3)
+    gpio.output(18, gpio.LOW)
+  else:
+    print("Button was not pressed.")
+    gpio.output(23, gpio.HIGH)
+    time.sleep(3)
+    gpio.output(23, gpio.LOW)
+#For this, this is supposed to be a test program used for the buttons and LED lights. It is expected that once you press the button, a line saying "button is pressed" should
+#appear, meaning the button works, and the LED light connected to port 18 should light up. If it is not pressed, a line saying "button was not pressed." should appear, and the
+#LED light connected to port 23 should light up.
