@@ -1,0 +1,23 @@
+Day 1
+I didn’t go to school. Che came up with a design about making a toy that plays sounds that would be able to help children with vision disabilities. The design goes something like this: the toy plays a sound, then the child needs to push one of the buttons that are labelled with shapes and figures to select the right one. For example, if a horse sound is emitted, then the kid might need to press the button that has a horse on it.
+
+Day 1.5
+I met with Che and discussed the design.
+
+Day 2
+I wrote and submitted the proposal. Mr. Bell made me try the BBC toy thing. It wasn’t successful. I thought I could use the integrated LED lights to make an interface, but it takes forever to learn how to program in that sub-python language, and the programming interface itself is just too whacky. I switched back to raspberry pi and successfully connected one LED light, and learned how to hook the pi onto a Bluetooth speaker. I am hesitant whether or not to use this original proposal anymore. Then I removed all the LED lights because I believe we would not need them in this project.
+
+Day 3
+I tried using sounds on the raspberry pi. I downloaded a “Correct.mp3” sound, but apparently raspberry pi doesn’t support win sound or play sound, or pygame. Mr. Bell tried to work with me, but all we did was to send blank documents to my laptop. Therefore, I switched the proposal to this: an elementary colour test that helps those with colorblindness/visual disabilities to recognize colour. Che agreed. I connected one LED light to the breadboard and got it working.
+
+Day 4
+I started the programming. I re-learned raspberry pi programming during the 20 minutes break that day, and I started by testing some basic input & output. Then I started programming. Halfway through the programming, I expanded the proposal to something like an elementary toy that helps with colour testing and provides basic math & English education for those with disabilities and/or who are not educated. Che is writing the proposal and building the model, while I will handle the programming. By the end of the class, I finished the colour testing part, the math test part and started working on the English test. I also made the LED lights and buttons working with the help from Mr. Bell.
+
+Day 5
+I continued to work on the project. Che decided to redo the model. I doubt if he has time, seeing he made 0 progress except for a small rectangle box on his laptop. I finished the English part today, as well as fixed some bugs. I worked on the documentation as well, on a google doc. I would later migrate this to Github. I also fixed some bugs and added a function. Next class, I plan on making it so that the program starts the moment the pi starts, as well as finishing up the documentation and migrating it to Github. 
+
+Day 6
+Finished up the documentation. Che finished the model and started printing it. Attempting to improve the program from 5 to 6.
+
+Day 6.5
+Went to Mr. Bell's room to work at lunch. Made the program start on boot, but it doesn't take input. Sent Mr. Bell an email about it.
